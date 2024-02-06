@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thyroid Disease Prediction</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e0f7fa; /* Light Blue background color */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333; /* Dark Gray label color */
+        }
+
+        select, input {
+            width: calc(100% - 16px); /* Adjusted width to account for padding */
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-top: 3px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <form action="{{url_for('predict_datapoint')}}" method="POST">
+        <div class="form-group">
+            <label for="sex">Sex:</label>
+            <select id="sex" name="sex">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="on_thyroxine">On Thyroxine:</label>
+            <select id="on_thyroxine" name="on_thyroxine">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="pregnant">Pregnant:</label>
+            <select id="pregnant" name="pregnant">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="query_hypothyroid">Query Hypothyroid:</label>
+            <select id="query_hypothyroid" name="query_hypothyroid">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="psych">Psych:</label>
+            <select id="psych" name="psych">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="TSH_measured">TSH Measured:</label>
+            <select id="TSH_measured" name="TSH_measured">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="TSH">TSH:</label>
+            <input type="text" id="TSH" name="TSH" placeholder="Enter TSH value (float)">
+        </div>
+
+        <div class="form-group">
+            <label for="T3">T3:</label>
+            <input type="text" id="T3" name="T3" placeholder="Enter T3 value (float)">
+        </div>
+
+        <div class="form-group">
+            <label for="TT4">TT4:</label>
+            <input type="text" id="TT4" name="TT4" placeholder="Enter TT4 value (float)">
+        </div>
+
+        <div class="form-group">
+            <label for="FTI">FTI:</label>
+            <input type="text" id="FTI" name="FTI" placeholder="Enter FTI value (float)">
+        </div>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

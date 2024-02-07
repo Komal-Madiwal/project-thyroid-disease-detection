@@ -1,10 +1,10 @@
 
 Project Title -Thyroid Disease Detection
 
-Technologies
+Technologies--
 Machine Learning Technology
 
-Domain
+Domain --
 Healthcare
 
 Problem Statement:

@@ -2,6 +2,7 @@
 Project Title -Thyroid Disease Detection
 
 Technologies
+
 Machine Learning Technology
 
 Domain
